@@ -48,8 +48,6 @@ struct ParsedRequest* parse_request(struct Request* raw_req)
                 req->body = &raw_req->buffer[i];
                 break;
             }
-
-            current_line_start = &raw_req->buffer[i];
             if (headers_start == 0) {
                 headers_start = &raw_req->buffer[i];
             }
