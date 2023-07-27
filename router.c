@@ -1,9 +1,6 @@
 #include "common.h"
 #include "router.h"
 #include "connection.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 unsigned char index_body[] = {
   0x3c, 0x21, 0x64, 0x6f, 0x63, 0x74, 0x79, 0x70, 0x65, 0x68, 0x74, 0x6d,
