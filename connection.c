@@ -1,8 +1,5 @@
 #include "connection.h"
 #include "common.h"
-#include <stdlib.h>
-#include <string.h>
-#include <sys/socket.h>
 
 int create_socket(void)
 {
@@ -76,7 +73,8 @@ struct Connection connection_new(int port)
     return conn;
 }
 
-struct Request* connection_get_request(struct Connection* conn) {
+struct Request* connection_get_request(struct Connection* conn)
+{
     struct Request* req = malloc(sizeof(struct Request));
 
     req->connfd = accept(
@@ -99,7 +97,8 @@ struct Request* connection_get_request(struct Connection* conn) {
 }
 
 
-void connection_delete_request(struct Request* req) {
+void connection_delete_request(struct Request* req)
+{
     close(req->connfd);
     free(req);
 }

@@ -1,12 +1,12 @@
-#ifndef _SOCKETMGR_H_
-#define _SOCKETMGR_H_
+#ifndef _CONNECTION_H_
+#define _CONNECTION_H_
 
 #include "common.h"
 
 #define REQUEST_MAX_SIZE 8192
 
 struct Request {
-    uint8_t buffer[REQUEST_MAX_SIZE + 1];
+    char buffer[REQUEST_MAX_SIZE + 1];
     ssize_t size;
     int connfd;
 };
