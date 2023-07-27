@@ -1,6 +1,6 @@
 CFLAGS= -Wall -Wpedantic
-CC=musl-clang
-LDFLAGS=
+CC=clang
+LDFLAGS=-static
 
 .PHONY: all
 
