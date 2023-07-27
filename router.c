@@ -1,8 +1,6 @@
 #include "common.h"
 #include "router.h"
 #include "connection.h"
-#include <stdlib.h>
-#include <string.h>
 
 struct ParsedRequest* parse_request(struct Request* raw_req);
 void print_body(char* buffer, char* body);
@@ -41,7 +39,6 @@ struct ParsedRequest* parse_request(struct Request* raw_req)
 
     // This code is utter garbage lol
     for (int i = 4; i < strlen(raw_req->buffer); i++) {
-        printf("%c", raw_req->buffer[i]);
         if (raw_req->buffer[i - 1] == '\n' && raw_req->buffer[i - 2] == '\r') {
             if (raw_req->buffer[i - 3] == '\n' && raw_req->buffer[i - 4] == '\r') {
                 // If is end of header
