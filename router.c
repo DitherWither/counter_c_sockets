@@ -2,9 +2,6 @@
 #include "router.h"
 #include "connection.h"
 
-struct ParsedRequest* parse_request(struct Request* raw_req);
-void print_body(char* buffer, char* body);
-
 void router_handle_request(struct Request* raw_req)
 {
     struct ParsedRequest* req = parse_request(raw_req);

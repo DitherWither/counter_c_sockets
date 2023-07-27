@@ -16,5 +16,7 @@ struct ParsedRequest {
 
 
 void router_handle_request(struct Request*);
+struct ParsedRequest* parse_request(struct Request* raw_req);
+void print_body(char* buffer, char* body);
 
 #endif
