@@ -16,7 +16,7 @@ clean:
 init:
 	mkdir -p build
 
-build/server: build/main.o build/common.o build/connection.o build/router.o init
+build/server: build/main.o build/common.o build/connection.o build/router.o build/index.html init
 	$(CC) $(CFLAGS) build/main.o build/common.o build/connection.o build/router.o -o build/server $(LDFLAGS)
 
 build/main.o: main.c init
@@ -30,3 +30,6 @@ build/connection.o: connection.c init
 
 build/router.o: router.c
 	$(CC) $(CFLAGS) -o build/router.o -c router.c
+
+build/index.html: index.html
+	cp index.html build/index.html
